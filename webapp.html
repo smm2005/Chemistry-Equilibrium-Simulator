@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Equilibrium Simulator</title>
+
+        <!--Scripts-->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+
+        <!--Fonts imported-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Prosto+One&display=swap" rel="stylesheet">
+        <style> @import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Prosto+One&display=swap'); </style>
+    </head>
+    <body>
+        <h1>Chemistry Equilibrium Simulator</h1>
+        <h2 id="moleDisplay"><span id="rMolesDisplay"></span> R <-> <span id="pMolesDisplay"></span> P</h2>
+
+        <!--More imported scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="webapp.js" defer></script>
+        <link rel="stylesheet" href="webdesign.css">  
+
+        <!--Equilibrium Law Portayer-->
+        <div id="eqlaw">
+            <p>k_eq=<span id="setEQ"></span></p>
+        </div>
+
+        <!--Sliders-->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="10" value="1" class ="slider" id="rMoles">
+            <p>Moles of Reactant: <span id="demo1"> </span></p>
+        </div>
+        <div class="slidecontainer2">
+            <input type="range" min="1" max="10" value="1" class ="slider2" id="pMoles">
+            <p>Moles of Product: <span id="demo2"> </span></p>
+        </div>
+        <div class="slidecontainer3">
+            <input type="range" min="-1000" max="1000" value="0" class ="slider3" id="enthalpy">
+            <p>Enthalpy (kJ): <span id="demo3"> </span></p>
+        </div>
+        <div class="slidecontainer4">
+            <input type="range" min="1" max="100" value="50" class ="slider4" id="concentration">
+            <p>Concentration of Reactants: <span id="demo4"> </span></p>
+        </div>
+        <div class="slidecontainer5">
+            <input type="range" min="1" max="100" value="50" class ="slider5" id="temperature">
+            <p>Temperature: <span id="demo5"> </span></p>
+        </div>
+        <div class="slidecontainer6">
+            <input type="range" min="1" max="10" value="1" class ="slider6" id="pressure">
+            <p>Pressure (atm): <span id="demo6"> </span></p>
+        </div>
+        <div id="box">
+            <div id = "box2">
+            </div>
+        </div>
+        <div id="dataSpread">
+            <table id="table">
+                <tr>
+                    <th>Stress</th>
+                    <th>Shifts to</th>
+                </tr>
+            </table>
+        </div>
+        <div id="graph">
+            <canvas id="myGraph"></canvas>
+        </div>
+        <div id = "box2">
+        </div>
+        <div id="rLegend">
+        </div>
+        <p2 id="reText">Reactants</p2>
+        <div id="pLegend">
+        </div>
+        <p2 id="prText">Products</p2>
+    </body>
+    <script src="webapp.js" defer></script>
+</html>
